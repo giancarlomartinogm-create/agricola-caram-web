@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agrícola Caram · Consultoría en riego y diseño agrícola · Arica y Parinacota</title>
+<meta name="description" content="Consultoría agrícola en Arica y Parinacota: evaluación de sistemas de riego, diseño agronómico e hidráulico de invernaderos, topografía con RTK y propuestas de mejora.">
+<meta property="og:title" content="Agrícola Caram · Consultoría agrícola en Arica y Parinacota">
+<meta property="og:description" content="Evaluamos y diseñamos sistemas de riego con datos medidos en terreno.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#2f4f46">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232f4f46'/%3E%3Cpath d='M16 7c-4 5-6 8.5-6 11.5a6 6 0 0 0 12 0C22 15.5 20 12 16 7z' fill='%23e9dcc4'/%3E%3C/svg%3E">
+<style>
+:root{
+  --tierra:#8a5a3b; --tierra-2:#b98b62; --arena:#f4ede2; --arena-2:#e9dcc4;
+  --verde:#2f4f46; --verde-2:#3f6b60; --agua:#5fa8a0; --agua-2:#d8ece9;
+  --tinta:#1f2a27; --gris:#5b6662; --borde:#ddd2c0; --blanco:#fffdf9;
+  --radio:14px; --max:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--tinta);background:var(--blanco);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+h1,h2,h3{line-height:1.2;letter-spacing:-.01em}
+h2{font-size:clamp(1.6rem,3.2vw,2.3rem);margin-bottom:.6rem}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tierra)}
+.lead{color:var(--gris);max-width:640px}
+section{padding:84px 0}
+
+/* nav */
+header.nav{position:sticky;top:0;z-index:20;background:rgba(255,253,249,.92);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--borde)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none;color:var(--verde);font-size:1.08rem}
+.logo svg{width:30px;height:30px}
+.nav ul{display:flex;gap:26px;list-style:none;font-size:.94rem}
+.nav ul a{text-decoration:none;color:var(--gris)}
+.nav ul a:hover{color:var(--verde)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:700;text-decoration:none;font-size:.97rem;border:2px solid transparent;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-prim{background:var(--verde);color:#fff}
+.btn-prim:hover{background:var(--verde-2)}
+.btn-sec{border-color:var(--verde);color:var(--verde)}
+.btn-sm{padding:9px 16px;font-size:.88rem}
+@media(max-width:820px){.nav ul{display:none}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--arena) 0%,var(--agua-2) 100%);padding:96px 0 110px}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(2.1rem,5vw,3.4rem);color:var(--verde);margin:14px 0 18px}
+.hero h1 span{color:var(--tierra)}
+.hero p{font-size:1.13rem;color:var(--gris);max-width:560px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.hero-card{background:var(--blanco);border:1px solid var(--borde);border-radius:20px;padding:26px;box-shadow:0 20px 50px -25px rgba(47,79,70,.45)}
+.hero-card h3{font-size:1rem;color:var(--verde);margin-bottom:14px}
+.datum{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-top:1px dashed var(--borde);font-size:.95rem}
+.datum:first-of-type{border-top:0}
+.tag{flex:none;font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:999px}
+.t-med{background:#dcefe6;color:#2b6a4f}.t-est{background:#f6e7cf;color:#8a5a1b}.t-pro{background:#dbe9f4;color:#2c5c84}
+.contours{position:absolute;inset:0;z-index:1;opacity:.5}
+@media(max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero{padding:64px 0 76px}}
+
+/* servicios */
+.grid{display:grid;gap:20px}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:1000px){.g4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.g4{grid-template-columns:1fr}}
+.card{background:var(--blanco);border:1px solid var(--borde);border-radius:var(--radio);padding:26px}
+.card .ico{width:46px;height:46px;border-radius:12px;background:var(--agua-2);display:grid;place-items:center;margin-bottom:16px}
+.card .ico svg{width:24px;height:24px;stroke:var(--verde);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:1.08rem;margin-bottom:8px;color:var(--verde)}
+.card p{font-size:.95rem;color:var(--gris)}
+.card ul{margin-top:12px;padding-left:18px;font-size:.92rem;color:var(--gris)}
+.card li{margin:3px 0}
+.sec-head{margin-bottom:40px}
+
+/* pasos */
+.pasos-bg{background:var(--arena)}
+.pasos{counter-reset:p;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media(max-width:1000px){.pasos{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.pasos{grid-template-columns:1fr}}
+.paso{position:relative;padding:26px 22px 22px;background:var(--blanco);border-radius:var(--radio);border:1px solid var(--borde)}
+.paso::before{counter-increment:p;content:counter(p,decimal-leading-zero);display:block;font-size:2rem;font-weight:800;color:var(--tierra-2);margin-bottom:6px}
+.paso h3{font-size:1.04rem;color:var(--verde);margin-bottom:6px}
+.paso p{font-size:.94rem;color:var(--gris)}
+
+/* tecnologia */
+.tec{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+@media(max-width:900px){.tec{grid-template-columns:1fr}}
+.tec ul{list-style:none;margin-top:22px}
+.tec li{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--borde);font-size:.98rem}
+.tec li::before{content:"";flex:none;width:9px;height:9px;margin-top:9px;border-radius:50%;background:var(--agua)}
+.nota{margin-top:18px;font-size:.86rem;color:var(--gris);background:var(--arena);padding:12px 14px;border-radius:10px;border-left:3px solid var(--tierra-2)}
+.croquis{background:var(--verde);border-radius:20px;padding:22px;color:#e9f3f1}
+.croquis svg{width:100%;height:auto;display:block}
+.croquis small{display:block;margin-top:10px;font-size:.8rem;opacity:.8}
+
+/* zona */
+.zona{background:var(--verde);color:#eef5f3}
+.zona .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+@media(max-width:900px){.zona .wrap{grid-template-columns:1fr}}
+.zona .eyebrow{color:var(--tierra-2)}
+.zona p{color:#cfe1dd}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.chip{border:1px solid rgba(255,255,255,.28);padding:7px 14px;border-radius:999px;font-size:.9rem}
+
+/* contacto */
+.contacto{text-align:center}
+.contacto .box{max-width:720px;margin:0 auto;background:linear-gradient(160deg,var(--arena),var(--agua-2));border:1px solid var(--borde);border-radius:22px;padding:48px 28px}
+.contacto .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+.pend{display:inline-block;margin-top:14px;font-size:.82rem;font-weight:700;color:#8a3b1b;background:#fbe4d6;border:1px dashed #d08a63;padding:5px 12px;border-radius:8px}
+
+footer{padding:30px 0;border-top:1px solid var(--borde);font-size:.86rem;color:var(--gris)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Agrícola Caram, inicio">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2f4f46"/><path d="M16 6.5c-4.2 5.2-6.3 8.8-6.3 12a6.3 6.3 0 0 0 12.6 0c0-3.2-2.1-6.8-6.3-12z" fill="#e9dcc4"/><path d="M12.5 19.5c1.5 1.8 5.5 1.8 7 0" stroke="#5fa8a0" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Agrícola Caram
+    </a>
+    <ul>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#metodo">Cómo trabajamos</a></li>
+      <li><a href="#tecnologia">Tecnología</a></li>
+      <li><a href="#zona">Zona</a></li>
+    </ul>
+    <a class="btn btn-prim btn-sm" href="#contacto">Contacto</a>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="hero">
+  <svg class="contours" viewBox="0 0 1200 600" preserveAspectRatio="none" aria-hidden="true">
+    <g fill="none" stroke="#b98b62" stroke-width="1">
+      <path d="M-20 520 C 200 470, 380 560, 620 500 S 1000 430, 1220 480"/>
+      <path d="M-20 470 C 220 420, 400 510, 640 450 S 1010 380, 1220 430"/>
+      <path d="M-20 420 C 240 370, 420 460, 660 400 S 1020 330, 1220 380"/>
+      <path d="M-20 370 C 260 320, 440 410, 680 350 S 1030 280, 1220 330"/>
+      <path d="M-20 320 C 280 270, 460 360, 700 300 S 1040 230, 1220 280"/>
+      <path d="M-20 270 C 300 220, 480 310, 720 250 S 1050 180, 1220 230"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Consultoría agrícola · Arica y Parinacota</span>
+      <h1>Riego que se entiende, <span>se mide</span> y se mejora.</h1>
+      <p>Evaluamos el sistema de riego que hoy tiene su predio o invernadero, aunque no existan planos, y diseñamos instalaciones nuevas con base agronómica e hidráulica. Cada recomendación parte de datos tomados en terreno.</p>
+      <div class="ctas">
+        <a class="btn btn-prim" href="#contacto">Conversemos su proyecto</a>
+        <a class="btn btn-sec" href="#servicios">Ver servicios</a>
+      </div>
+    </div>
+    <div class="hero-card" aria-label="Ejemplo de cómo registramos cada dato">
+      <h3>Cada dato dice de dónde viene</h3>
+      <div class="datum"><span class="tag t-med">Medido</span><span>Tomado en terreno con instrumento: cotas, diámetros, presiones, caudales.</span></div>
+      <div class="datum"><span class="tag t-est">Estimado</span><span>Calculado o inferido, con su criterio explícito, hasta poder medirlo.</span></div>
+      <div class="datum"><span class="tag t-pro">Propuesto</span><span>Lo que recomendamos cambiar o construir, separado de lo que existe.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="servicios">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Servicios</span>
+      <h2>Del terreno al sistema de riego completo</h2>
+      <p class="lead">Trabajamos por etapas: puede contratar una evaluación puntual o el diseño completo de una instalación.</p>
+    </div>
+    <div class="grid g4">
+      <article class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3c-3.5 4.4-5.3 7.4-5.3 10.1a5.3 5.3 0 0 0 10.6 0C17.3 10.4 15.5 7.4 12 3z"/><path d="M9.5 14.5l1.8 1.8 3.4-3.6"/></svg></div>
+        <h3>Evaluación de riego existente</h3>
+        <p>Revisamos cómo funciona hoy su instalación y dónde se pierde agua, presión o uniformidad.</p>
+        <ul><li>Reconstrucción de la red sin planos</li><li>Registro de componentes con fotografías</li><li>Croquis hidráulico del sistema</li></ul>
+      </article>
+      <article class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="10" width="18" height="10" rx="1.5"/><path d="M3 10l9-6 9 6"/><path d="M8 20v-5M12 20v-5M16 20v-5"/></svg></div>
+        <h3>Diseño agronómico e hidráulico</h3>
+        <p>Diseño de riego para invernaderos y campo, desde la necesidad del cultivo hasta la red.</p>
+        <ul><li>Necesidades de riego</li><li>Estanque, bomba y fertirriego</li><li>Matrices, submatrices y laterales</li></ul>
+      </article>
+      <article class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 18c3-3 5-3 8 0s5 3 10-1"/><path d="M3 13c3-3 5-3 8 0s5 3 10-1"/><path d="M3 8c3-3 5-3 8 0s5 3 10-1"/></svg></div>
+        <h3>Topografía y levantamiento</h3>
+        <p>Levantamiento del terreno con GPS de precisión (RTK) para trabajar sobre cotas reales.</p>
+        <ul><li>Modelo de terreno y pendientes</li><li>Curvas de nivel y delimitación</li><li>Diseño y orientación de camellones</li></ul>
+      </article>
+      <article class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M6 16l4-5 3 3 5-7"/><path d="M15 7h3v3"/></svg></div>
+        <h3>Propuesta de mejoras</h3>
+        <p>Un informe claro con lo que conviene corregir, en qué orden y por qué.</p>
+        <ul><li>Diagnóstico priorizado</li><li>Alternativas técnicas comparadas</li><li>Separación entre lo medido y lo propuesto</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="metodo" class="pasos-bg">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Cómo trabajamos</span>
+      <h2>Un proceso ordenado, paso a paso</h2>
+      <p class="lead">Nada se supone: lo que no está medido queda marcado como pendiente hasta confirmarlo.</p>
+    </div>
+    <div class="pasos">
+      <div class="paso"><h3>Visita y diagnóstico</h3><p>Conocemos el predio, el cultivo, la fuente de agua y lo que le preocupa del sistema actual.</p></div>
+      <div class="paso"><h3>Levantamiento en terreno</h3><p>Medimos el terreno con RTK y registramos cada componente de la red, desde el estanque hasta los laterales.</p></div>
+      <div class="paso"><h3>Modelo y análisis</h3><p>Armamos el croquis hidráulico y el modelo del terreno, y cruzamos la instalación con lo que el cultivo necesita.</p></div>
+      <div class="paso"><h3>Propuesta e informe</h3><p>Entregamos el diagnóstico y las mejoras recomendadas, con cada dato identificado según su origen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="tecnologia">
+  <div class="wrap tec">
+    <div>
+      <span class="eyebrow">Tecnología propia</span>
+      <h2>Metodología apoyada en software propio</h2>
+      <p class="lead">Estamos desarrollando nuestra propia herramienta para unir en un solo lugar el terreno, las necesidades del cultivo y la instalación de riego. Hoy la usamos como apoyo en nuestras asesorías.</p>
+      <ul>
+        <li>Procesamiento de levantamientos RTK: modelo de terreno, pendientes y curvas de nivel.</li>
+        <li>Delimitación del área de trabajo y análisis de camellones según la pendiente.</li>
+        <li>Registro de la red de riego por componentes, con su evidencia fotográfica.</li>
+        <li>Trazabilidad de cada dato: medido, estimado o propuesto.</li>
+      </ul>
+      <p class="nota">El software está en desarrollo. Sus funciones se incorporan a medida que se validan en casos reales; el criterio técnico del consultor siempre revisa el resultado.</p>
+    </div>
+    <div class="croquis" aria-label="Ilustración de un croquis hidráulico simplificado">
+      <svg viewBox="0 0 420 300" role="img">
+        <title>Croquis hidráulico ilustrativo: estanque, bomba, cabezal y sectores</title>
+        <g font-family="system-ui,sans-serif" font-size="11" fill="#e9f3f1">
+          <rect x="18" y="110" width="70" height="60" rx="6" fill="none" stroke="#5fa8a0" stroke-width="2"/>
+          <path d="M22 145 q 15 -8 31 0 t 31 0" stroke="#5fa8a0" fill="none" stroke-width="1.5"/>
+          <text x="53" y="188" text-anchor="middle">Estanque</text>
+          <line x1="88" y1="140" x2="130" y2="140" stroke="#e9dcc4" stroke-width="3"/>
+          <circle cx="146" cy="140" r="16" fill="none" stroke="#e9dcc4" stroke-width="2"/>
+          <path d="M140 132 l12 8 -12 8z" fill="#e9dcc4"/>
+          <text x="146" y="174" text-anchor="middle">Bomba</text>
+          <line x1="162" y1="140" x2="200" y2="140" stroke="#e9dcc4" stroke-width="3"/>
+          <rect x="200" y="122" width="56" height="36" rx="5" fill="none" stroke="#b98b62" stroke-width="2"/>
+          <text x="228" y="144" text-anchor="middle">Cabezal</text>
+          <text x="228" y="174" text-anchor="middle" font-size="10" opacity=".8">filtro · fertirriego</text>
+          <line x1="256" y1="140" x2="290" y2="140" stroke="#e9dcc4" stroke-width="3"/>
+          <line x1="290" y1="70" x2="290" y2="230" stroke="#e9dcc4" stroke-width="3"/>
+          <line x1="290" y1="70" x2="330" y2="70" stroke="#e9dcc4" stroke-width="2.5"/>
+          <line x1="290" y1="230" x2="330" y2="230" stroke="#e9dcc4" stroke-width="2.5"/>
+          <rect x="330" y="40" width="74" height="60" rx="5" fill="rgba(95,168,160,.18)" stroke="#5fa8a0"/>
+          <rect x="330" y="200" width="74" height="60" rx="5" fill="rgba(95,168,160,.18)" stroke="#5fa8a0"/>
+          <g stroke="#5fa8a0" stroke-width="1"><line x1="338" y1="52" x2="396" y2="52"/><line x1="338" y1="64" x2="396" y2="64"/><line x1="338" y1="76" x2="396" y2="76"/><line x1="338" y1="88" x2="396" y2="88"/><line x1="338" y1="212" x2="396" y2="212"/><line x1="338" y1="224" x2="396" y2="224"/><line x1="338" y1="236" x2="396" y2="236"/><line x1="338" y1="248" x2="396" y2="248"/></g>
+          <text x="367" y="116" text-anchor="middle">Sector 1</text>
+          <text x="367" y="276" text-anchor="middle">Sector 2</text>
+          <text x="300" y="160" font-size="10" opacity=".8">matriz</text>
+        </g>
+      </svg>
+      <small>Ilustración referencial de cómo representamos una red: del estanque a cada sector.</small>
+    </div>
+  </div>
+</section>
+
+<section id="zona" class="zona">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Zona de trabajo</span>
+      <h2>Región de Arica y Parinacota</h2>
+      <p>Conocemos las condiciones de la zona: agua escasa y de calidad variable, suelos exigentes y una agricultura donde cada litro bien aplicado se nota en el resultado.</p>
+    </div>
+    <div>
+      <p>Trabajamos con invernaderos, predios a campo abierto y sistemas de riego tecnificado de la región.</p>
+      <div class="chips">
+        <span class="chip">Valle de Azapa</span>
+        <span class="chip">Valle de Lluta</span>
+        <span class="chip">Arica</span>
+        <span class="chip">Provincia de Parinacota</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="contacto">
+  <div class="wrap">
+    <div class="box">
+      <span class="eyebrow">Contacto</span>
+      <h2>¿Su riego podría funcionar mejor?</h2>
+      <p class="lead" style="margin:0 auto">Cuéntenos de su predio o invernadero y coordinamos una visita de diagnóstico.</p>
+      <div class="ctas">
+        <a class="btn btn-prim" href="#contacto" aria-disabled="true">Escribir por WhatsApp</a>
+      </div>
+      <span class="pend">[pendiente: WhatsApp de Benjamín]</span>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Agrícola Caram · Arica y Parinacota, Chile</span>
+    <span>Consultoría en riego, topografía y diseño agrícola</span>
+  </div>
+</footer>
+</body>
+</html>
